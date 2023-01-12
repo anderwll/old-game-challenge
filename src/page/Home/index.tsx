@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './index.css';
 
@@ -46,11 +46,13 @@ const Home: React.FC = () => {
         if(winner !== undefined) {
             setTimeout(() => { 
                 alert('PARABÉNS VC GANHOUU! 🎉');
-            }, 800)
+            }, 800);
+            return
         }
 
         if(endGame) {
             alert('ACABOUU!! DEU VELHA 😪');
+            return
         }
 
         return
@@ -109,6 +111,7 @@ const Home: React.FC = () => {
 
     return (
         <div className='section'>
+            <Typography variant="h2" color="#333" sx={{position: 'fixed', top: 0}}>OLD GAME</Typography>
             <div className='board-game'>
                 {gameData.map((item, index) => 
                     <span 
